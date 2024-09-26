@@ -1,0 +1,49 @@
+ /*this challenge, you are required to compute the area of a rectangle using classes.Create two classes:
+
+Rectangle
+The Rectangle class should have two data fields-width and height of int types. The class should have display()
+ method, to print the width and height of the rectangle separated by space.
+RectangleArea
+
+The RectangleArea class is derived from Rectangle class, i.e., it is the sub-class of Rectangle class. The class should
+ have read_input() method, to read the values of width and height of the rectangle. The RectangleArea class
+ should also overload the display() method to print the area  of the rectangle.*/
+
+ #include <iostream>
+using namespace std;
+
+class Rectangle {
+protected:
+    int width;
+    int height;
+
+public:
+    Rectangle(int w = 0, int h = 0) : width(w), height(h) {}
+
+    void display() {
+        cout << width << " " << height << endl;
+    }
+};
+
+class RectangleArea : public Rectangle {
+public:
+    void read_input() {
+        cout << "Enter width: ";
+        cin >> width;
+        cout << "Enter height: ";
+        cin >> height;
+    }
+
+    void display() {
+        int area = width * height;
+        cout << "Area: " << area << endl;
+    }
+};
+
+int main() {
+    RectangleArea rectArea;
+    rectArea.read_input();
+    rectArea.display();
+    return 0;
+}
+
