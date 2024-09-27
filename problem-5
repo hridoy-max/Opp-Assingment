@@ -1,0 +1,54 @@
+ //Create a base class Shape with virtual methods area() and perimeter(). 
+ //Derive two classes Circle and Rectangle from Shape and implement the methods.
+
+//solve
+#include<iostream>
+using namespace std;
+
+class Shape{
+    public:
+        virtual float area() = 0;
+        virtual float perimeter() = 0;
+};
+
+class Circle:public Shape{
+    private:
+        float radius;
+
+    public:
+    Circle(float r):radius(r){}
+
+    float  area(){
+     return 3.1416*radius*radius;
+        }
+float perimeter(){
+            return 2*3.1416*radius;
+        }
+};
+class Rectangle:public Shape{
+    private:
+        float length;
+        float width;
+
+    public:
+        Rectangle(float l,float w):length(l),width(w){}
+float area(){
+            return length*width;
+        }
+float perimeter(){
+        return 2*(length+width);
+        }
+};
+
+int main(){
+    Shape*shape1=new Circle(5);
+    Shape*shape2=new Rectangle(4, 6);
+
+ cout<<"Circle Area:"<<shape1->area()<<endl;
+    cout<<"Circle Perimeter:"<shape1->perimeter()<<endl;
+cout<< "Rectangle Area:"<<shape2->area()<<endl;
+ cout<<"Rectangle Perimeter:"<<shape2->perimeter()<<endl;
+
+return 0;
+}
+
