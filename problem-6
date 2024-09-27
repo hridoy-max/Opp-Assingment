@@ -1,0 +1,29 @@
+//Create an abstract class Animal with a pure virtual function sound(),
+//and derive classes Dog and Cat.
+
+class Animal {
+public:
+    virtual void sound()=0;  };
+
+class Dog:public Animal {
+public:
+    void sound(){
+        cout<<"Woof Woof"<<endl;
+    }
+};
+
+class Cat:public Animal {
+public:
+    void sound(){
+        cout<<"Meow"<<endl;
+    }
+};
+
+int main(){
+    Dog dog;
+    Cat cat;
+    dog.sound();
+    cat.sound();
+    return 0;
+}
+
