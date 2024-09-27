@@ -1,0 +1,35 @@
+/*Create a class Complex to represent complex numbers and overload the + and - operators
+for addition and subtraction of two complex numbers.*/
+
+#include<iostream>
+using namespace std;
+class complex {
+    int img;
+    int real;
+public:
+    complex(int i=0,int r=0):img(i),real(r){};
+
+    complex operator +(complex obj){
+      complex temp;
+      temp.real=real+obj.real;
+      temp.img=img+obj.img;
+      return temp;
+    }
+    complex operator -(complex obj){
+      complex temp;
+      temp.real=real-obj.real;
+      temp.img=img-obj.img;
+      return temp;
+    }
+    void display(){ cout<<real<<"+"<<img<<"i"<<endl;}
+};
+int main (){
+  complex c1(3.5, 2.5), c2(1.5, 1.5);
+    complex c3 = c1 + c2;
+    complex c4 = c1 - c2;
+
+    cout << "Sum: "; c3.display();
+    cout << "Difference: "; c4.display();
+
+    return 0;
+}
