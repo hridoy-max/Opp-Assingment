@@ -1,0 +1,38 @@
+Problem: Create a class BankAccount with attributes like accountNumber, balance,
+and methods like deposit(), withdraw(), and displayBalance().
+
+#include<iostream>
+using namespace std;
+
+class Bankaccount {
+    private:
+        int ac_num;
+        double balance;
+
+    public:
+     Bankaccount(int a,double b):ac_num(a),blace(b){};
+
+        void deposit(double amount) {
+            balance += amount;
+        }
+
+        void withdraw(double amount) {
+            if (balance >= amount)
+                balance -= amount;
+            else
+                cout << "Not enough balace" << endl;
+        }
+
+        void displaybalance() {
+            cout << "Account Number: " << ac_num << endl;
+            cout << "Balance: " << balance << endl;
+        }
+};
+
+int main() {
+    Bankaccount acc(12345, 1000);
+    acc.deposit(500);
+    acc.withdraw(200);
+    acc.displaybalance();
+    return 0;
+}
